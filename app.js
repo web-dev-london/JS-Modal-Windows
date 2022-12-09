@@ -1,21 +1,18 @@
-const openBtn = document.getElementById('open-btn');
-const modalContainer = document.getElementById(
-  'modal-container',
+const modal = document.querySelector('#modal');
+const openModal = document.querySelector('.open-button');
+const closeModal = document.querySelector(
+  '.close-button',
 );
-const closeBtn = document.getElementById('close-btn');
 
-// Add Event Listener
-
-openBtn.addEventListener('click', () => {
-  modalContainer.style.display = 'block';
+openModal.addEventListener('click', () => {
+  modal.showModal();
 });
 
-closeBtn.addEventListener('click', () => {
-  modalContainer.style.display = 'none';
+closeModal.addEventListener('click', () => {
+  modal.close();
 });
-
 window.addEventListener('click', (e) => {
-  if (e.target === modalContainer) {
-    modalContainer.style.display = 'none';
+  if (e.target === modal) {
+    modal.close();
   }
 });
